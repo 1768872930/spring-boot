@@ -1,0 +1,39 @@
+spring:
+    profiles.active: liyimaster
+    aop.auto: false
+    jpa.database : MYSQL
+    mvc:
+      view:
+        prefix:
+        
+    redis:
+          database  : 0
+          host      : 127.0.0.1
+          port      : 6379
+          pool      :
+                max-idle    : 8
+                min-idle    : 0
+                max-active  : 8
+                max-wait    : 1
+server:
+    port: 8099
+    context-path: /
+logging:
+    level:
+        com.liyimaster: DEBUG
+datasource:
+        name: liyiDataSourceName
+        url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8
+        username: root
+        password: 
+        driverClassName : com.mysql.jdbc.Driver
+        autoCommit: false
+        minimumIdle: 20
+        maximumPoolSize: 20
+        connectionInitSql: select 1
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+crossDomainFilter:
+    origin: "*"
