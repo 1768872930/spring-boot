@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liyimaster.dal.user.UserDal">
+
+	<resultMap id="BaseResultMap" type="com.liyimaster.entity.user.user">
+		<result column="uuid" property="uuid" jdbcType="VARCHAR" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="eamil" property="eamil" jdbcType="VARCHAR" />
+		<result column="password" property="password" jdbcType="VARCHAR" />
+		<result column="salt" property="salt" jdbcType="VARCHAR" />
+		<result column="mobileNumber" property="mobilenumber" jdbcType="INTEGER" />
+	</resultMap>
+
+	<sql id="user">
+	uuid,
+	name,
+	eamil,
+	password,
+	salt,
+	mobileNumber
+	</sql>
+
+	<select id="query" resultMap="BaseResultMap">
+		select
+		<include refid="user" />
+		from li_user
+	</select>
+
+	<insert id="insert" parameterMap="BaseResultMap">
+		insert into li_user (uuid,
+		name, eamil,
+		password, salt, mobileNumber
+		)
+		values
+		(#{uuid,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+		#{eamil,jdbcType=VARCHAR},
+		#{password,jdbcType=VARCHAR},
+		#{salt,jdbcType=VARCHAR}, #{mobilenumber,jdbcType=INTEGER}
+		)
+	</insert>
+
+</mapper>

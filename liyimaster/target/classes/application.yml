@@ -2,10 +2,8 @@ spring:
     profiles.active: liyimaster
     aop.auto: false
     jpa.database : MYSQL
-    mvc:
-      view:
-        prefix:
-        
+    view:
+      suffix: .jsp
     redis:
           database  : 0
           host      : 127.0.0.1
