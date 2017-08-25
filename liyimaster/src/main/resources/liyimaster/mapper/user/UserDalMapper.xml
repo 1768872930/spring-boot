@@ -26,17 +26,5 @@
 		from li_user
 	</select>
 
-	<insert id="insert" parameterMap="BaseResultMap">
-		insert into li_user (uuid,
-		name, eamil,
-		password, salt, mobileNumber
-		)
-		values
-		(#{uuid,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
-		#{eamil,jdbcType=VARCHAR},
-		#{password,jdbcType=VARCHAR},
-		#{salt,jdbcType=VARCHAR}, #{mobilenumber,jdbcType=INTEGER}
-		)
-	</insert>
 
 </mapper>

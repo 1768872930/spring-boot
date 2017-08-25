@@ -13,13 +13,7 @@ spring:
                 min-idle    : 0
                 max-active  : 8
                 max-wait    : 1
-server:
-    port: 8099
-    context-path: /
-logging:
-    level:
-        com.liyimaster: DEBUG
-datasource:
+    datasource:
         name: liyiDataSourceName
         url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8
         username: root
@@ -33,5 +27,11 @@ datasource:
         prepStmtCacheSize: 250
         prepStmtCacheSqlLimit: 2048
         useServerPrepStmts: true
+server:
+    port: 8099
+    context-path: /
+logging:
+    level:
+        com.liyimaster: DEBUG
 crossDomainFilter:
     origin: "*"

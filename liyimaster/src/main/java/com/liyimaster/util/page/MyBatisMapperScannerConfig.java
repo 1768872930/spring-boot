@@ -13,7 +13,7 @@ public class MyBatisMapperScannerConfig {
 	public MapperScannerConfigurer mapperScannerConfigurer() {
 		MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
 		mapperScannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactory");
-		mapperScannerConfigurer.setBasePackage("tk.mybatis.springboot.mapper");
+		mapperScannerConfigurer.setBasePackage("com.liyimaster.dal.*");
 		return mapperScannerConfigurer;
 	}
 
