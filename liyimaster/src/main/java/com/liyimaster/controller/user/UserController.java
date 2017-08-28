@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.liyimaster.entity.instrument.ResponseUtil;
 import com.liyimaster.entity.user.user;
 import com.liyimaster.service.user.UserSerivce;
+import com.liyimaster.util.config.myMV;
 
 @RestController
 @RequestMapping("/user")
@@ -23,7 +24,8 @@ public class UserController {
 	public ResponseEntity<?> quer() {
 		List<user> userList = userSerivce.query();
 		System.out.println("over");
-	//	ConcurrentHashMap<String, Object> map = new ConcurrentHashMap<String, Object>();
+		// ConcurrentHashMap<String, Object> map = new ConcurrentHashMap<String,
+		// Object>();
 		return ResponseUtil.requestok(userList);
 	}
 
@@ -39,6 +41,11 @@ public class UserController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/login.jsp");
 		mv.addObject("update", "over");
+		return mv;
+	}
+
+	public myMV test1() {
+		myMV mv = new myMV();
 		return mv;
 	}
 
