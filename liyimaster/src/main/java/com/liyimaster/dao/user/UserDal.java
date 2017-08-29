@@ -1,4 +1,4 @@
-package com.liyimaster.dal.user;
+package com.liyimaster.dao.user;
 
 import java.util.List;
 

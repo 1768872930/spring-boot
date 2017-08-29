@@ -2,6 +2,8 @@ package com.liyimaster.controller.user;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,13 +21,15 @@ import com.liyimaster.util.config.myMV;
 public class UserController {
 	@Autowired
 	private UserSerivce userSerivce;
+	private static Logger log = LoggerFactory.getLogger(UserController.class);
 
 	@RequestMapping(value = "/quer", method = RequestMethod.GET)
 	public ResponseEntity<?> quer() {
 		List<user> userList = userSerivce.query();
+		log.debug("debug====");
+		log.info("info====");
+		log.error("error====");
 		System.out.println("over");
-		// ConcurrentHashMap<String, Object> map = new ConcurrentHashMap<String,
-		// Object>();
 		return ResponseUtil.requestok(userList);
 	}
 
@@ -46,6 +50,7 @@ public class UserController {
 
 	public myMV test1() {
 		myMV mv = new myMV();
+		mv.addValue("update", "over");
 		return mv;
 	}
 
